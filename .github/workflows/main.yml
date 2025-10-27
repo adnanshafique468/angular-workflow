@@ -1,0 +1,23 @@
+name: Angular workflow
+
+on:
+ push:
+  branches: [ main ]
+
+jobs:
+  Angular-app-workflow:
+   runs-on: ubuntu-latest
+
+   steps:
+    - uses: actions/checkout@v5.0.0
+    - name: setup Node Js
+      uses: actions/setup-node@v6.0.0
+      with:
+        node-version: 22.x
+    - name: Install dependencies
+      run: npm install 
+    - name: Build angular app
+      run: npm run build
+    
+    
+  
